@@ -6,6 +6,8 @@ import bodyParser from 'body-parser'
 import session from 'express-session'
 import connectPgSimple from "connect-pg-simple"
 import passport from '../config/passportConfig.js'; 
+import dotenv  from 'dotenv';
+
 
 // import cookieParser from "cookie-parser"
 // import jwt,{JstPayload} from "jsonwebtoken"
@@ -25,7 +27,7 @@ const app = express()
 
 app.use(session({
     store: new (connectPgSimple(session))({
-        conString: 'postgresql://neondb_owner:9P5OIWtsexhc@ep-fragrant-cloud-a152mxg2.ap-southeast-1.aws.neon.tech/neondb?sslmode=true',
+        conString: process.env.DATABASE_URL,
     }),
     secret: 'keyboard cat',
     resave: false,
