@@ -7,7 +7,7 @@ function Home() {
     useEffect(() => {
     (async () => {
       console.log("inside effect")
-      const res = await fetch('http://localhost:3000/getQuote')
+      const res = await fetch('http://13.201.129.179/getQuote')
       const data = await res.json()
       setRandomQuote(data.quote)
       console.log(data.quote)
