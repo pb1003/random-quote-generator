@@ -16,7 +16,7 @@ import path from "path" // concatenates path
 const JWT_SECRET = "test123";
 
 
-
+dotenv.config();
 
 // TypeScript is a statically typed language and it needs to know the types of all objects at compile time.
 // But the ts does not know about the type of express.. therefore we need to install the type defs of this object
